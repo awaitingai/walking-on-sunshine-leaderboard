@@ -24,19 +24,19 @@
             height: 75vh;
             overflow: hidden;
             position: relative;
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
           }
-          .scroll-content {
-            display: inline-block;
-            animation: scrollUp 30s linear infinite;
+          .scroll-wrapper {
+            animation: scrollUp 40s linear infinite;
           }
           @keyframes scrollUp {
-            0% { transform: translateY(100%); }
-            100% { transform: translateY(-100%); }
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
           }
           table {
-            margin: 0 auto;
-            width: 90%;
-            max-width: 1000px;
+            width: 100%;
             border-collapse: collapse;
             border-radius: 10px;
             overflow: hidden;
@@ -44,7 +44,10 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
           }
           thead {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 10;
           }
           th, td {
             padding: 20px;
@@ -66,17 +69,19 @@
       <body>
         <h1>🏆 Step Into Heart Health Leaderboard</h1>
         <div class="scroll-container">
-          <div class="scroll-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Steps</th>
+              </tr>
+            </thead>
+          </table>
+          <div class="scroll-wrapper">
             <table>
-              <thead>
-                <tr>
-                  <th>Rank</th>
-                  <th>Name</th>
-                  <th>Steps</th>
-                </tr>
-              </thead>
               <tbody>
-                <tr><td>1</td><td>Rachel OH</td><td>274,982</td></tr><tr><td>2</td><td>JAK</td><td>197,229</td></tr><tr><td>3</td><td>Thomas G</td><td>186,828</td></tr><tr><td>4</td><td>Amanda H</td><td>174,712</td></tr><tr><td>5</td><td>Kelly B</td><td>174,225</td></tr><tr><td>6</td><td>Enahs D</td><td>150,423</td></tr><tr><td>7</td><td>Jay E</td><td>138,352</td></tr><tr><td>8</td><td>Spursfan</td><td>134,063</td></tr><tr><td>9</td><td>Leah R</td><td>114,080</td></tr><tr><td>10</td><td>Goonie</td><td>103,428</td></tr><tr><td>11</td><td>Jason H</td><td>97,241</td></tr><tr><td>12</td><td>kayla m</td><td>94,120</td></tr><tr><td>13</td><td>Turbo</td><td>86,983</td></tr><tr><td>14</td><td>Megan</td><td>69,328</td></tr><tr><td>15</td><td>Josh K</td><td>67,996</td></tr><tr><td>16</td><td>Sarah P</td><td>67,477</td></tr><tr><td>17</td><td>Bex_V</td><td>64,138</td></tr><tr><td>18</td><td>DevelopMatt</td><td>42,144</td></tr><tr><td>19</td><td>Katie L</td><td>37,789</td></tr>
+                <tr><td>1</td><td>Rachel OH</td><td>274,982</td></tr><tr><td>2</td><td>JAK</td><td>197,229</td></tr><tr><td>3</td><td>Thomas G</td><td>186,828</td></tr><tr><td>4</td><td>Amanda H</td><td>174,712</td></tr><tr><td>5</td><td>Kelly B</td><td>174,225</td></tr><tr><td>6</td><td>Enahs D</td><td>150,423</td></tr><tr><td>7</td><td>Jay E</td><td>138,352</td></tr><tr><td>8</td><td>Spursfan</td><td>134,063</td></tr><tr><td>9</td><td>Leah R</td><td>114,080</td></tr><tr><td>10</td><td>Goonie</td><td>103,428</td></tr><tr><td>11</td><td>Jason H</td><td>97,241</td></tr><tr><td>12</td><td>kayla m</td><td>94,120</td></tr><tr><td>13</td><td>Turbo</td><td>86,983</td></tr><tr><td>14</td><td>Megan</td><td>69,328</td></tr><tr><td>15</td><td>Josh K</td><td>67,996</td></tr><tr><td>16</td><td>Sarah P</td><td>67,477</td></tr><tr><td>17</td><td>Bex_V</td><td>64,138</td></tr><tr><td>18</td><td>DevelopMatt</td><td>42,144</td></tr><tr><td>19</td><td>Katie L</td><td>37,789</td></tr><tr><td>1</td><td>Rachel OH</td><td>274,982</td></tr><tr><td>2</td><td>JAK</td><td>197,229</td></tr><tr><td>3</td><td>Thomas G</td><td>186,828</td></tr><tr><td>4</td><td>Amanda H</td><td>174,712</td></tr><tr><td>5</td><td>Kelly B</td><td>174,225</td></tr><tr><td>6</td><td>Enahs D</td><td>150,423</td></tr><tr><td>7</td><td>Jay E</td><td>138,352</td></tr><tr><td>8</td><td>Spursfan</td><td>134,063</td></tr><tr><td>9</td><td>Leah R</td><td>114,080</td></tr><tr><td>10</td><td>Goonie</td><td>103,428</td></tr><tr><td>11</td><td>Jason H</td><td>97,241</td></tr><tr><td>12</td><td>kayla m</td><td>94,120</td></tr><tr><td>13</td><td>Turbo</td><td>86,983</td></tr><tr><td>14</td><td>Megan</td><td>69,328</td></tr><tr><td>15</td><td>Josh K</td><td>67,996</td></tr><tr><td>16</td><td>Sarah P</td><td>67,477</td></tr><tr><td>17</td><td>Bex_V</td><td>64,138</td></tr><tr><td>18</td><td>DevelopMatt</td><td>42,144</td></tr><tr><td>19</td><td>Katie L</td><td>37,789</td></tr>
               </tbody>
             </table>
           </div>
