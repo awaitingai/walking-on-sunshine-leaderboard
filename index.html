@@ -33,7 +33,6 @@
       color: #d7dadb;
       font-weight: normal;
       z-index: 12;
-      letter-spacing: 1px;
       background: rgba(15, 32, 39, 0.96);
       padding: 4px 10px;
       border-radius: 6px;
@@ -43,31 +42,35 @@
       padding-top: 95px;
       width: 100vw;
     }
-    .tables {
+    .tables3 {
       display: flex;
       justify-content: center;
-      gap: 48px;
-      padding: 20px 0 0 0;
       align-items: flex-start;
+      gap: 36px;
+      width: 100vw;
     }
-    .table-container {
-      background: rgba(255, 255, 255, 0.09);
+    .scroll-table-container,
+    .top-table-container {
+      background: rgba(255,255,255,0.10);
       border-radius: 16px;
-      width: 38vw;
-      min-width: 340px;
-      max-width: 650px;
-      height: 75vh;
-      box-shadow: 0 0 24px rgba(0,0,0,0.18);
+      box-shadow: 0 0 24px rgba(0,0,0,0.17);
       display: flex;
       flex-direction: column;
       overflow: hidden;
       position: relative;
+      min-width: 310px;
+      max-width: 470px;
+      width: 28vw;
+      margin-bottom: 10px;
     }
-    .table-outer {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
+    .top-table-container {
+      width: 410px;
+      min-width: 340px;
+      max-width: 460px;
+      background: rgba(255,255,255,0.13);
+      margin: 0 20px;
+      z-index: 3;
+      box-shadow: 0 0 20px #0003;
     }
     table {
       width: 100%;
@@ -76,20 +79,16 @@
       font-size: 1.14em;
       background: none;
     }
-    thead tr {
-      background: rgba(15, 32, 39, 0.98);
-      color: #fff;
-    }
     th, td {
-      padding: 14px 18px;
+      padding: 13px 17px;
       text-align: left;
       white-space: nowrap;
-      height: 32px;
+      height: 31px;
     }
     th {
-      font-size: 1.15em;
+      font-size: 1.12em;
       font-weight: bold;
-      border-bottom: 2px solid #fff3;
+      border-bottom: 2px solid #fff4;
       background: rgba(15, 32, 39, 0.98);
       position: sticky;
       top: 0;
@@ -98,14 +97,14 @@
     .scrollbody {
       overflow: hidden;
       flex: 1 1 auto;
-      height: 100%;
-      position: relative;
+      height: 55vh;
       width: 100%;
+      position: relative;
     }
     .autoscroll {
       display: block;
       width: 100%;
-      animation: scroll-up 55s linear infinite;
+      animation: scroll-up 60s linear infinite;
       table-layout: fixed;
     }
     .scrollbody:hover .autoscroll {
@@ -121,7 +120,7 @@
       display: table-row;
     }
     tbody tr:nth-child(even) {
-      background: rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.09);
     }
     tbody tr:hover {
       background: rgba(255,255,255,0.17);
@@ -129,7 +128,10 @@
     td, th {
       width: 33.3%;
       box-sizing: border-box;
-      /* Ensures columns line up between table head and body */
+    }
+    @media (max-width: 1100px) {
+      .tables3 { flex-direction: column; align-items: center; gap:18px;}
+      .top-table-container, .scroll-table-container { min-width:230px; width: 97vw; max-width: 98vw;}
     }
   </style>
 </head>
@@ -139,53 +141,140 @@
   </div>
   <span class="last-updated">Last Updated on: 5/28/2025 11:36 AM</span>
   <div class="main-content">
-    <div class="tables">
-      <div class="table-container">
-        <div class="table-outer">
-          <table>
-            <thead>
-              <tr><th>Rank</th><th>Name</th><th>Steps</th></tr>
-            </thead>
+    <div class="tables3">
+      <div class="scroll-table-container">
+        <table>
+          <thead><tr><th>Rank</th><th>Name</th><th>Steps</th></tr></thead>
+        </table>
+        <div class="scrollbody">
+          <table id="scrollLeft" class="autoscroll">
+            <tbody id="tbodyLeft"></tbody>
           </table>
-          <div class="scrollbody">
-            <table id="scrollTableLeft" class="autoscroll">
-              <tbody id="tbodyLeft"></tbody>
-            </table>
-          </div>
         </div>
       </div>
-      <div class="table-container">
-        <div class="table-outer">
-          <table>
-            <thead>
-              <tr><th>Rank</th><th>Name</th><th>Steps</th></tr>
-            </thead>
+      <div class="top-table-container">
+        <table>
+          <thead><tr><th>Rank</th><th>Name</th><th>Steps</th></tr></thead>
+          <tbody>
+            
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>0</td>
+                </tr>
+              
+                <tr>
+                  <td>1</td>
+                  <td>Aaron G</td>
+                  <td>100</td>
+                </tr>
+              
+                <tr>
+                  <td>2</td>
+                  <td>Adam B</td>
+                  <td>101</td>
+                </tr>
+              
+                <tr>
+                  <td>3</td>
+                  <td>Alexis R</td>
+                  <td>102</td>
+                </tr>
+              
+                <tr>
+                  <td>4</td>
+                  <td>Alinda S</td>
+                  <td>103</td>
+                </tr>
+              
+                <tr>
+                  <td>5</td>
+                  <td>Amy M</td>
+                  <td>104</td>
+                </tr>
+              
+                <tr>
+                  <td>6</td>
+                  <td>Andrea M</td>
+                  <td>105</td>
+                </tr>
+              
+                <tr>
+                  <td>7</td>
+                  <td>Angela B</td>
+                  <td>106</td>
+                </tr>
+              
+                <tr>
+                  <td>8</td>
+                  <td>Angie R</td>
+                  <td>107</td>
+                </tr>
+              
+                <tr>
+                  <td>9</td>
+                  <td>Ashley B</td>
+                  <td>108</td>
+                </tr>
+              
+                <tr>
+                  <td>10</td>
+                  <td>Ashley M</td>
+                  <td>109</td>
+                </tr>
+              
+                <tr>
+                  <td>11</td>
+                  <td>Ashley R</td>
+                  <td>110</td>
+                </tr>
+              
+                <tr>
+                  <td>12</td>
+                  <td>Austin L</td>
+                  <td>111</td>
+                </tr>
+              
+                <tr>
+                  <td>13</td>
+                  <td>Barrett B</td>
+                  <td>112</td>
+                </tr>
+              
+                <tr>
+                  <td>14</td>
+                  <td>Ben M</td>
+                  <td>113</td>
+                </tr>
+              
+          </tbody>
+        </table>
+      </div>
+      <div class="scroll-table-container">
+        <table>
+          <thead><tr><th>Rank</th><th>Name</th><th>Steps</th></tr></thead>
+        </table>
+        <div class="scrollbody">
+          <table id="scrollRight" class="autoscroll">
+            <tbody id="tbodyRight"></tbody>
           </table>
-          <div class="scrollbody">
-            <table id="scrollTableRight" class="autoscroll">
-              <tbody id="tbodyRight"></tbody>
-            </table>
-          </div>
         </div>
       </div>
     </div>
   </div>
   <script>
-    // Prepare leaderboard data (skip first row if it's a header/blank)
-    const items = [{"json":{"Screen Name":"Aaron G","Overall Rank":"1","Avg/Day":"100"},"pairedItem":{"item":1}},{"json":{"Screen Name":"Adam B","Overall Rank":"2","Avg/Day":"101"},"pairedItem":{"item":2}},{"json":{"Screen Name":"Alexis R","Overall Rank":"3","Avg/Day":"102"},"pairedItem":{"item":3}},{"json":{"Screen Name":"Alinda S","Overall Rank":"4","Avg/Day":"103"},"pairedItem":{"item":4}},{"json":{"Screen Name":"Amy M","Overall Rank":"5","Avg/Day":"104"},"pairedItem":{"item":5}},{"json":{"Screen Name":"Andrea M","Overall Rank":"6","Avg/Day":"105"},"pairedItem":{"item":6}},{"json":{"Screen Name":"Angela B","Overall Rank":"7","Avg/Day":"106"},"pairedItem":{"item":7}},{"json":{"Screen Name":"Angie R","Overall Rank":"8","Avg/Day":"107"},"pairedItem":{"item":8}},{"json":{"Screen Name":"Ashley B","Overall Rank":"9","Avg/Day":"108"},"pairedItem":{"item":9}},{"json":{"Screen Name":"Ashley M","Overall Rank":"10","Avg/Day":"109"},"pairedItem":{"item":10}},{"json":{"Screen Name":"Ashley R","Overall Rank":"11","Avg/Day":"110"},"pairedItem":{"item":11}},{"json":{"Screen Name":"Austin L","Overall Rank":"12","Avg/Day":"111"},"pairedItem":{"item":12}},{"json":{"Screen Name":"Barrett B","Overall Rank":"13","Avg/Day":"112"},"pairedItem":{"item":13}},{"json":{"Screen Name":"Ben M","Overall Rank":"14","Avg/Day":"113"},"pairedItem":{"item":14}},{"json":{"Screen Name":"Ben S","Overall Rank":"15","Avg/Day":"114"},"pairedItem":{"item":15}},{"json":{"Screen Name":"Beth W","Overall Rank":"16","Avg/Day":"115"},"pairedItem":{"item":16}},{"json":{"Screen Name":"Bob G","Overall Rank":"17","Avg/Day":"116"},"pairedItem":{"item":17}},{"json":{"Screen Name":"Brent B","Overall Rank":"18","Avg/Day":"117"},"pairedItem":{"item":18}},{"json":{"Screen Name":"Brian B","Overall Rank":"19","Avg/Day":"118"},"pairedItem":{"item":19}},{"json":{"Screen Name":"Brian L W","Overall Rank":"20","Avg/Day":"119"},"pairedItem":{"item":20}},{"json":{"Screen Name":"Brooks D","Overall Rank":"21","Avg/Day":"120"},"pairedItem":{"item":21}},{"json":{"Screen Name":"Calie K","Overall Rank":"22","Avg/Day":"121"},"pairedItem":{"item":22}},{"json":{"Screen Name":"Caroline M","Overall Rank":"23","Avg/Day":"122"},"pairedItem":{"item":23}},{"json":{"Screen Name":"Chad J","Overall Rank":"24","Avg/Day":"123"},"pairedItem":{"item":24}},{"json":{"Screen Name":"Chad R","Overall Rank":"25","Avg/Day":"124"},"pairedItem":{"item":25}},{"json":{"Screen Name":"Chad T","Overall Rank":"26","Avg/Day":"125"},"pairedItem":{"item":26}},{"json":{"Screen Name":"Charles L","Overall Rank":"27","Avg/Day":"126"},"pairedItem":{"item":27}},{"json":{"Screen Name":"Chloe M","Overall Rank":"28","Avg/Day":"127"},"pairedItem":{"item":28}},{"json":{"Screen Name":"Chris F","Overall Rank":"29","Avg/Day":"128"},"pairedItem":{"item":29}},{"json":{"Screen Name":"Christian E","Overall Rank":"30","Avg/Day":"129"},"pairedItem":{"item":30}},{"json":{"Screen Name":"Christina S","Overall Rank":"31","Avg/Day":"130"},"pairedItem":{"item":31}},{"json":{"Screen Name":"Christi S","Overall Rank":"32","Avg/Day":"131"},"pairedItem":{"item":32}},{"json":{"Screen Name":"Christopher G","Overall Rank":"33","Avg/Day":"132"},"pairedItem":{"item":33}},{"json":{"Screen Name":"Cody B","Overall Rank":"34","Avg/Day":"133"},"pairedItem":{"item":34}},{"json":{"Screen Name":"Cody K","Overall Rank":"35","Avg/Day":"134"},"pairedItem":{"item":35}},{"json":{"Screen Name":"Connie B","Overall Rank":"36","Avg/Day":"135"},"pairedItem":{"item":36}},{"json":{"Screen Name":"Coreena S","Overall Rank":"37","Avg/Day":"136"},"pairedItem":{"item":37}},{"json":{"Screen Name":"Courtney G","Overall Rank":"38","Avg/Day":"137"},"pairedItem":{"item":38}},{"json":{"Screen Name":"Courtney T","Overall Rank":"39","Avg/Day":"138"},"pairedItem":{"item":39}},{"json":{"Screen Name":"Dana l","Overall Rank":"40","Avg/Day":"139"},"pairedItem":{"item":40}},{"json":{"Screen Name":"Daniel M","Overall Rank":"41","Avg/Day":"140"},"pairedItem":{"item":41}},{"json":{"Screen Name":"David S","Overall Rank":"42","Avg/Day":"141"},"pairedItem":{"item":42}},{"json":{"Screen Name":"David V","Overall Rank":"43","Avg/Day":"142"},"pairedItem":{"item":43}},{"json":{"Screen Name":"Dennis P","Overall Rank":"44","Avg/Day":"143"},"pairedItem":{"item":44}},{"json":{"Screen Name":"Drew S","Overall Rank":"45","Avg/Day":"144"},"pairedItem":{"item":45}},{"json":{"Screen Name":"Elena A","Overall Rank":"46","Avg/Day":"145"},"pairedItem":{"item":46}},{"json":{"Screen Name":"Elizabeth P","Overall Rank":"47","Avg/Day":"146"},"pairedItem":{"item":47}},{"json":{"Screen Name":"Elizabeth Z","Overall Rank":"48","Avg/Day":"147"},"pairedItem":{"item":48}},{"json":{"Screen Name":"Eric S","Overall Rank":"49","Avg/Day":"148"},"pairedItem":{"item":49}},{"json":{"Screen Name":"Felecia G","Overall Rank":"50","Avg/Day":"149"},"pairedItem":{"item":50}},{"json":{"Screen Name":"Garrett M","Overall Rank":"51","Avg/Day":"150"},"pairedItem":{"item":51}},{"json":{"Screen Name":"Gloria A","Overall Rank":"52","Avg/Day":"151"},"pairedItem":{"item":52}},{"json":{"Screen Name":"Grace F","Overall Rank":"53","Avg/Day":"152"},"pairedItem":{"item":53}},{"json":{"Screen Name":"Gregory S","Overall Rank":"54","Avg/Day":"153"},"pairedItem":{"item":54}},{"json":{"Screen Name":"Hakam S","Overall Rank":"55","Avg/Day":"154"},"pairedItem":{"item":55}},{"json":{"Screen Name":"Hannah F","Overall Rank":"56","Avg/Day":"155"},"pairedItem":{"item":56}},{"json":{"Screen Name":"Isaiah W","Overall Rank":"57","Avg/Day":"156"},"pairedItem":{"item":57}},{"json":{"Screen Name":"Jacob M","Overall Rank":"58","Avg/Day":"157"},"pairedItem":{"item":58}},{"json":{"Screen Name":"Jake V","Overall Rank":"59","Avg/Day":"158"},"pairedItem":{"item":59}},{"json":{"Screen Name":"James B","Overall Rank":"60","Avg/Day":"159"},"pairedItem":{"item":60}},{"json":{"Screen Name":"Jamie R","Overall Rank":"61","Avg/Day":"160"},"pairedItem":{"item":61}},{"json":{"Screen Name":"Jana G","Overall Rank":"62","Avg/Day":"161"},"pairedItem":{"item":62}},{"json":{"Screen Name":"Jane D","Overall Rank":"63","Avg/Day":"162"},"pairedItem":{"item":63}},{"json":{"Screen Name":"Janee J","Overall Rank":"64","Avg/Day":"163"},"pairedItem":{"item":64}},{"json":{"Screen Name":"Janet S","Overall Rank":"65","Avg/Day":"164"},"pairedItem":{"item":65}},{"json":{"Screen Name":"Jennifer M","Overall Rank":"66","Avg/Day":"165"},"pairedItem":{"item":66}},{"json":{"Screen Name":"Jenn L","Overall Rank":"67","Avg/Day":"166"},"pairedItem":{"item":67}},{"json":{"Screen Name":"Jenn S","Overall Rank":"68","Avg/Day":"167"},"pairedItem":{"item":68}},{"json":{"Screen Name":"Jeremiah C","Overall Rank":"69","Avg/Day":"168"},"pairedItem":{"item":69}},{"json":{"Screen Name":"Jessica F","Overall Rank":"70","Avg/Day":"169"},"pairedItem":{"item":70}},{"json":{"Screen Name":"Jim S","Overall Rank":"71","Avg/Day":"170"},"pairedItem":{"item":71}},{"json":{"Screen Name":"Joe S","Overall Rank":"72","Avg/Day":"171"},"pairedItem":{"item":72}},{"json":{"Screen Name":"Joey H","Overall Rank":"73","Avg/Day":"172"},"pairedItem":{"item":73}},{"json":{"Screen Name":"Joey M","Overall Rank":"74","Avg/Day":"173"},"pairedItem":{"item":74}},{"json":{"Screen Name":"Johnny B","Overall Rank":"75","Avg/Day":"174"},"pairedItem":{"item":75}},{"json":{"Screen Name":"John C","Overall Rank":"76","Avg/Day":"175"},"pairedItem":{"item":76}},{"json":{"Screen Name":"John S","Overall Rank":"77","Avg/Day":"176"},"pairedItem":{"item":77}},{"json":{"Screen Name":"Jordan B","Overall Rank":"78","Avg/Day":"177"},"pairedItem":{"item":78}},{"json":{"Screen Name":"Jordan C","Overall Rank":"79","Avg/Day":"178"},"pairedItem":{"item":79}},{"json":{"Screen Name":"Jorge T","Overall Rank":"80","Avg/Day":"179"},"pairedItem":{"item":80}},{"json":{"Screen Name":"Josh C","Overall Rank":"81","Avg/Day":"180"},"pairedItem":{"item":81}},{"json":{"Screen Name":"Julie C","Overall Rank":"82","Avg/Day":"181"},"pairedItem":{"item":82}},{"json":{"Screen Name":"Justin D","Overall Rank":"83","Avg/Day":"182"},"pairedItem":{"item":83}},{"json":{"Screen Name":"Karen W","Overall Rank":"84","Avg/Day":"183"},"pairedItem":{"item":84}},{"json":{"Screen Name":"Kasi O","Overall Rank":"85","Avg/Day":"184"},"pairedItem":{"item":85}},{"json":{"Screen Name":"Kat G","Overall Rank":"86","Avg/Day":"185"},"pairedItem":{"item":86}},{"json":{"Screen Name":"Kevin J","Overall Rank":"87","Avg/Day":"186"},"pairedItem":{"item":87}},{"json":{"Screen Name":"Kevin N","Overall Rank":"88","Avg/Day":"187"},"pairedItem":{"item":88}},{"json":{"Screen Name":"Kristen H","Overall Rank":"89","Avg/Day":"188"},"pairedItem":{"item":89}},{"json":{"Screen Name":"Kurt D","Overall Rank":"90","Avg/Day":"189"},"pairedItem":{"item":90}},{"json":{"Screen Name":"Kylee S","Overall Rank":"91","Avg/Day":"190"},"pairedItem":{"item":91}},{"json":{"Screen Name":"Latasha B","Overall Rank":"92","Avg/Day":"191"},"pairedItem":{"item":92}},{"json":{"Screen Name":"Laura K","Overall Rank":"93","Avg/Day":"192"},"pairedItem":{"item":93}},{"json":{"Screen Name":"Leslie D","Overall Rank":"94","Avg/Day":"193"},"pairedItem":{"item":94}},{"json":{"Screen Name":"Leslie F","Overall Rank":"95","Avg/Day":"194"},"pairedItem":{"item":95}},{"json":{"Screen Name":"Levi W","Overall Rank":"96","Avg/Day":"195"},"pairedItem":{"item":96}},{"json":{"Screen Name":"Logann M","Overall Rank":"97","Avg/Day":"196"},"pairedItem":{"item":97}},{"json":{"Screen Name":"Lori M","Overall Rank":"98","Avg/Day":"197"},"pairedItem":{"item":98}},{"json":{"Screen Name":"Lorrie H","Overall Rank":"99","Avg/Day":"198"},"pairedItem":{"item":99}},{"json":{"Screen Name":"Lynn S","Overall Rank":"100","Avg/Day":"199"},"pairedItem":{"item":100}},{"json":{"Screen Name":"Maranda C","Overall Rank":"101","Avg/Day":"200"},"pairedItem":{"item":101}},{"json":{"Screen Name":"Mary J","Overall Rank":"102","Avg/Day":"201"},"pairedItem":{"item":102}},{"json":{"Screen Name":"Matson K","Overall Rank":"103","Avg/Day":"202"},"pairedItem":{"item":103}},{"json":{"Screen Name":"Matthew K","Overall Rank":"104","Avg/Day":"203"},"pairedItem":{"item":104}},{"json":{"Screen Name":"Maureen F","Overall Rank":"105","Avg/Day":"204"},"pairedItem":{"item":105}},{"json":{"Screen Name":"Megan K","Overall Rank":"106","Avg/Day":"205"},"pairedItem":{"item":106}},{"json":{"Screen Name":"Megan S","Overall Rank":"107","Avg/Day":"206"},"pairedItem":{"item":107}},{"json":{"Screen Name":"Megan T","Overall Rank":"108","Avg/Day":"207"},"pairedItem":{"item":108}},{"json":{"Screen Name":"Melissa K","Overall Rank":"109","Avg/Day":"208"},"pairedItem":{"item":109}},{"json":{"Screen Name":"Mimi O","Overall Rank":"110","Avg/Day":"209"},"pairedItem":{"item":110}},{"json":{"Screen Name":"Meriam R","Overall Rank":"111","Avg/Day":"210"},"pairedItem":{"item":111}},{"json":{"Screen Name":"Michael R","Overall Rank":"112","Avg/Day":"211"},"pairedItem":{"item":112}},{"json":{"Screen Name":"Michele B","Overall Rank":"113","Avg/Day":"212"},"pairedItem":{"item":113}},{"json":{"Screen Name":"Michelle C","Overall Rank":"114","Avg/Day":"213"},"pairedItem":{"item":114}},{"json":{"Screen Name":"Michelle H","Overall Rank":"115","Avg/Day":"214"},"pairedItem":{"item":115}},{"json":{"Screen Name":"Michelle R","Overall Rank":"116","Avg/Day":"215"},"pairedItem":{"item":116}},{"json":{"Screen Name":"Michelle S","Overall Rank":"117","Avg/Day":"216"},"pairedItem":{"item":117}},{"json":{"Screen Name":"Mike H","Overall Rank":"118","Avg/Day":"217"},"pairedItem":{"item":118}},{"json":{"Screen Name":"mike k","Overall Rank":"119","Avg/Day":"218"},"pairedItem":{"item":119}},{"json":{"Screen Name":"Mike S","Overall Rank":"120","Avg/Day":"219"},"pairedItem":{"item":120}},{"json":{"Screen Name":"Myles B","Overall Rank":"121","Avg/Day":"220"},"pairedItem":{"item":121}},{"json":{"Screen Name":"Nancy W","Overall Rank":"122","Avg/Day":"221"},"pairedItem":{"item":122}},{"json":{"Screen Name":"Natalie S","Overall Rank":"123","Avg/Day":"222"},"pairedItem":{"item":123}},{"json":{"Screen Name":"Nicole W","Overall Rank":"124","Avg/Day":"223"},"pairedItem":{"item":124}},{"json":{"Screen Name":"Nina H","Overall Rank":"125","Avg/Day":"224"},"pairedItem":{"item":125}},{"json":{"Screen Name":"Pat D","Overall Rank":"126","Avg/Day":"225"},"pairedItem":{"item":126}},{"json":{"Screen Name":"PaulJK","Overall Rank":"127","Avg/Day":"226"},"pairedItem":{"item":127}},{"json":{"Screen Name":"Paul K","Overall Rank":"128","Avg/Day":"227"},"pairedItem":{"item":128}},{"json":{"Screen Name":"Peggy P","Overall Rank":"129","Avg/Day":"228"},"pairedItem":{"item":129}},{"json":{"Screen Name":"Rachel R","Overall Rank":"130","Avg/Day":"229"},"pairedItem":{"item":130}},{"json":{"Screen Name":"Ralph T","Overall Rank":"131","Avg/Day":"230"},"pairedItem":{"item":131}},{"json":{"Screen Name":"Renee R","Overall Rank":"132","Avg/Day":"231"},"pairedItem":{"item":132}},{"json":{"Screen Name":"Ron S","Overall Rank":"133","Avg/Day":"232"},"pairedItem":{"item":133}},{"json":{"Screen Name":"Rose M","Overall Rank":"134","Avg/Day":"233"},"pairedItem":{"item":134}},{"json":{"Screen Name":"Rrachelle B","Overall Rank":"135","Avg/Day":"234"},"pairedItem":{"item":135}},{"json":{"Screen Name":"Ryan P","Overall Rank":"136","Avg/Day":"235"},"pairedItem":{"item":136}},{"json":{"Screen Name":"Ryan T","Overall Rank":"137","Avg/Day":"236"},"pairedItem":{"item":137}},{"json":{"Screen Name":"Sabrina P","Overall Rank":"138","Avg/Day":"237"},"pairedItem":{"item":138}},{"json":{"Screen Name":"Samantha B","Overall Rank":"139","Avg/Day":"238"},"pairedItem":{"item":139}},{"json":{"Screen Name":"Samuel A","Overall Rank":"140","Avg/Day":"239"},"pairedItem":{"item":140}},{"json":{"Screen Name":"Sara E","Overall Rank":"141","Avg/Day":"240"},"pairedItem":{"item":141}},{"json":{"Screen Name":"Sara K","Overall Rank":"142","Avg/Day":"241"},"pairedItem":{"item":142}},{"json":{"Screen Name":"Scott J","Overall Rank":"143","Avg/Day":"242"},"pairedItem":{"item":143}},{"json":{"Screen Name":"Scott M","Overall Rank":"144","Avg/Day":"243"},"pairedItem":{"item":144}},{"json":{"Screen Name":"Scott R","Overall Rank":"145","Avg/Day":"244"},"pairedItem":{"item":145}},{"json":{"Screen Name":"Shannon B","Overall Rank":"146","Avg/Day":"245"},"pairedItem":{"item":146}},{"json":{"Screen Name":"Sheri A","Overall Rank":"147","Avg/Day":"246"},"pairedItem":{"item":147}},{"json":{"Screen Name":"Skyler P","Overall Rank":"148","Avg/Day":"247"},"pairedItem":{"item":148}},{"json":{"Screen Name":"Stefan C","Overall Rank":"149","Avg/Day":"248"},"pairedItem":{"item":149}},{"json":{"Screen Name":"Steve E","Overall Rank":"150","Avg/Day":"249"},"pairedItem":{"item":150}},{"json":{"Screen Name":"Steve W","Overall Rank":"151","Avg/Day":"250"},"pairedItem":{"item":151}},{"json":{"Screen Name":"Sydney W","Overall Rank":"152","Avg/Day":"251"},"pairedItem":{"item":152}},{"json":{"Screen Name":"Tabitha D","Overall Rank":"153","Avg/Day":"252"},"pairedItem":{"item":153}},{"json":{"Screen Name":"Tami H","Overall Rank":"154","Avg/Day":"253"},"pairedItem":{"item":154}},{"json":{"Screen Name":"Taylor M","Overall Rank":"155","Avg/Day":"254"},"pairedItem":{"item":155}},{"json":{"Screen Name":"Taylor N","Overall Rank":"156","Avg/Day":"255"},"pairedItem":{"item":156}},{"json":{"Screen Name":"Therese V","Overall Rank":"157","Avg/Day":"256"},"pairedItem":{"item":157}},{"json":{"Screen Name":"Tim B","Overall Rank":"158","Avg/Day":"257"},"pairedItem":{"item":158}},{"json":{"Screen Name":"Tim C","Overall Rank":"159","Avg/Day":"258"},"pairedItem":{"item":159}},{"json":{"Screen Name":"Tony M","Overall Rank":"160","Avg/Day":"259"},"pairedItem":{"item":160}},{"json":{"Screen Name":"Tracy F","Overall Rank":"161","Avg/Day":"260"},"pairedItem":{"item":161}},{"json":{"Screen Name":"Tracy T","Overall Rank":"162","Avg/Day":"261"},"pairedItem":{"item":162}},{"json":{"Screen Name":"Zoe H","Overall Rank":"163","Avg/Day":"262"},"pairedItem":{"item":163}}];
+    // Items (skip first row if blank)
+    const all = [{"json":{"Screen Name":"Aaron G","Overall Rank":"1","Avg/Day":"100"},"pairedItem":{"item":1}},{"json":{"Screen Name":"Adam B","Overall Rank":"2","Avg/Day":"101"},"pairedItem":{"item":2}},{"json":{"Screen Name":"Alexis R","Overall Rank":"3","Avg/Day":"102"},"pairedItem":{"item":3}},{"json":{"Screen Name":"Alinda S","Overall Rank":"4","Avg/Day":"103"},"pairedItem":{"item":4}},{"json":{"Screen Name":"Amy M","Overall Rank":"5","Avg/Day":"104"},"pairedItem":{"item":5}},{"json":{"Screen Name":"Andrea M","Overall Rank":"6","Avg/Day":"105"},"pairedItem":{"item":6}},{"json":{"Screen Name":"Angela B","Overall Rank":"7","Avg/Day":"106"},"pairedItem":{"item":7}},{"json":{"Screen Name":"Angie R","Overall Rank":"8","Avg/Day":"107"},"pairedItem":{"item":8}},{"json":{"Screen Name":"Ashley B","Overall Rank":"9","Avg/Day":"108"},"pairedItem":{"item":9}},{"json":{"Screen Name":"Ashley M","Overall Rank":"10","Avg/Day":"109"},"pairedItem":{"item":10}},{"json":{"Screen Name":"Ashley R","Overall Rank":"11","Avg/Day":"110"},"pairedItem":{"item":11}},{"json":{"Screen Name":"Austin L","Overall Rank":"12","Avg/Day":"111"},"pairedItem":{"item":12}},{"json":{"Screen Name":"Barrett B","Overall Rank":"13","Avg/Day":"112"},"pairedItem":{"item":13}},{"json":{"Screen Name":"Ben M","Overall Rank":"14","Avg/Day":"113"},"pairedItem":{"item":14}},{"json":{"Screen Name":"Ben S","Overall Rank":"15","Avg/Day":"114"},"pairedItem":{"item":15}},{"json":{"Screen Name":"Beth W","Overall Rank":"16","Avg/Day":"115"},"pairedItem":{"item":16}},{"json":{"Screen Name":"Bob G","Overall Rank":"17","Avg/Day":"116"},"pairedItem":{"item":17}},{"json":{"Screen Name":"Brent B","Overall Rank":"18","Avg/Day":"117"},"pairedItem":{"item":18}},{"json":{"Screen Name":"Brian B","Overall Rank":"19","Avg/Day":"118"},"pairedItem":{"item":19}},{"json":{"Screen Name":"Brian L W","Overall Rank":"20","Avg/Day":"119"},"pairedItem":{"item":20}},{"json":{"Screen Name":"Brooks D","Overall Rank":"21","Avg/Day":"120"},"pairedItem":{"item":21}},{"json":{"Screen Name":"Calie K","Overall Rank":"22","Avg/Day":"121"},"pairedItem":{"item":22}},{"json":{"Screen Name":"Caroline M","Overall Rank":"23","Avg/Day":"122"},"pairedItem":{"item":23}},{"json":{"Screen Name":"Chad J","Overall Rank":"24","Avg/Day":"123"},"pairedItem":{"item":24}},{"json":{"Screen Name":"Chad R","Overall Rank":"25","Avg/Day":"124"},"pairedItem":{"item":25}},{"json":{"Screen Name":"Chad T","Overall Rank":"26","Avg/Day":"125"},"pairedItem":{"item":26}},{"json":{"Screen Name":"Charles L","Overall Rank":"27","Avg/Day":"126"},"pairedItem":{"item":27}},{"json":{"Screen Name":"Chloe M","Overall Rank":"28","Avg/Day":"127"},"pairedItem":{"item":28}},{"json":{"Screen Name":"Chris F","Overall Rank":"29","Avg/Day":"128"},"pairedItem":{"item":29}},{"json":{"Screen Name":"Christian E","Overall Rank":"30","Avg/Day":"129"},"pairedItem":{"item":30}},{"json":{"Screen Name":"Christina S","Overall Rank":"31","Avg/Day":"130"},"pairedItem":{"item":31}},{"json":{"Screen Name":"Christi S","Overall Rank":"32","Avg/Day":"131"},"pairedItem":{"item":32}},{"json":{"Screen Name":"Christopher G","Overall Rank":"33","Avg/Day":"132"},"pairedItem":{"item":33}},{"json":{"Screen Name":"Cody B","Overall Rank":"34","Avg/Day":"133"},"pairedItem":{"item":34}},{"json":{"Screen Name":"Cody K","Overall Rank":"35","Avg/Day":"134"},"pairedItem":{"item":35}},{"json":{"Screen Name":"Connie B","Overall Rank":"36","Avg/Day":"135"},"pairedItem":{"item":36}},{"json":{"Screen Name":"Coreena S","Overall Rank":"37","Avg/Day":"136"},"pairedItem":{"item":37}},{"json":{"Screen Name":"Courtney G","Overall Rank":"38","Avg/Day":"137"},"pairedItem":{"item":38}},{"json":{"Screen Name":"Courtney T","Overall Rank":"39","Avg/Day":"138"},"pairedItem":{"item":39}},{"json":{"Screen Name":"Dana l","Overall Rank":"40","Avg/Day":"139"},"pairedItem":{"item":40}},{"json":{"Screen Name":"Daniel M","Overall Rank":"41","Avg/Day":"140"},"pairedItem":{"item":41}},{"json":{"Screen Name":"David S","Overall Rank":"42","Avg/Day":"141"},"pairedItem":{"item":42}},{"json":{"Screen Name":"David V","Overall Rank":"43","Avg/Day":"142"},"pairedItem":{"item":43}},{"json":{"Screen Name":"Dennis P","Overall Rank":"44","Avg/Day":"143"},"pairedItem":{"item":44}},{"json":{"Screen Name":"Drew S","Overall Rank":"45","Avg/Day":"144"},"pairedItem":{"item":45}},{"json":{"Screen Name":"Elena A","Overall Rank":"46","Avg/Day":"145"},"pairedItem":{"item":46}},{"json":{"Screen Name":"Elizabeth P","Overall Rank":"47","Avg/Day":"146"},"pairedItem":{"item":47}},{"json":{"Screen Name":"Elizabeth Z","Overall Rank":"48","Avg/Day":"147"},"pairedItem":{"item":48}},{"json":{"Screen Name":"Eric S","Overall Rank":"49","Avg/Day":"148"},"pairedItem":{"item":49}},{"json":{"Screen Name":"Felecia G","Overall Rank":"50","Avg/Day":"149"},"pairedItem":{"item":50}},{"json":{"Screen Name":"Garrett M","Overall Rank":"51","Avg/Day":"150"},"pairedItem":{"item":51}},{"json":{"Screen Name":"Gloria A","Overall Rank":"52","Avg/Day":"151"},"pairedItem":{"item":52}},{"json":{"Screen Name":"Grace F","Overall Rank":"53","Avg/Day":"152"},"pairedItem":{"item":53}},{"json":{"Screen Name":"Gregory S","Overall Rank":"54","Avg/Day":"153"},"pairedItem":{"item":54}},{"json":{"Screen Name":"Hakam S","Overall Rank":"55","Avg/Day":"154"},"pairedItem":{"item":55}},{"json":{"Screen Name":"Hannah F","Overall Rank":"56","Avg/Day":"155"},"pairedItem":{"item":56}},{"json":{"Screen Name":"Isaiah W","Overall Rank":"57","Avg/Day":"156"},"pairedItem":{"item":57}},{"json":{"Screen Name":"Jacob M","Overall Rank":"58","Avg/Day":"157"},"pairedItem":{"item":58}},{"json":{"Screen Name":"Jake V","Overall Rank":"59","Avg/Day":"158"},"pairedItem":{"item":59}},{"json":{"Screen Name":"James B","Overall Rank":"60","Avg/Day":"159"},"pairedItem":{"item":60}},{"json":{"Screen Name":"Jamie R","Overall Rank":"61","Avg/Day":"160"},"pairedItem":{"item":61}},{"json":{"Screen Name":"Jana G","Overall Rank":"62","Avg/Day":"161"},"pairedItem":{"item":62}},{"json":{"Screen Name":"Jane D","Overall Rank":"63","Avg/Day":"162"},"pairedItem":{"item":63}},{"json":{"Screen Name":"Janee J","Overall Rank":"64","Avg/Day":"163"},"pairedItem":{"item":64}},{"json":{"Screen Name":"Janet S","Overall Rank":"65","Avg/Day":"164"},"pairedItem":{"item":65}},{"json":{"Screen Name":"Jennifer M","Overall Rank":"66","Avg/Day":"165"},"pairedItem":{"item":66}},{"json":{"Screen Name":"Jenn L","Overall Rank":"67","Avg/Day":"166"},"pairedItem":{"item":67}},{"json":{"Screen Name":"Jenn S","Overall Rank":"68","Avg/Day":"167"},"pairedItem":{"item":68}},{"json":{"Screen Name":"Jeremiah C","Overall Rank":"69","Avg/Day":"168"},"pairedItem":{"item":69}},{"json":{"Screen Name":"Jessica F","Overall Rank":"70","Avg/Day":"169"},"pairedItem":{"item":70}},{"json":{"Screen Name":"Jim S","Overall Rank":"71","Avg/Day":"170"},"pairedItem":{"item":71}},{"json":{"Screen Name":"Joe S","Overall Rank":"72","Avg/Day":"171"},"pairedItem":{"item":72}},{"json":{"Screen Name":"Joey H","Overall Rank":"73","Avg/Day":"172"},"pairedItem":{"item":73}},{"json":{"Screen Name":"Joey M","Overall Rank":"74","Avg/Day":"173"},"pairedItem":{"item":74}},{"json":{"Screen Name":"Johnny B","Overall Rank":"75","Avg/Day":"174"},"pairedItem":{"item":75}},{"json":{"Screen Name":"John C","Overall Rank":"76","Avg/Day":"175"},"pairedItem":{"item":76}},{"json":{"Screen Name":"John S","Overall Rank":"77","Avg/Day":"176"},"pairedItem":{"item":77}},{"json":{"Screen Name":"Jordan B","Overall Rank":"78","Avg/Day":"177"},"pairedItem":{"item":78}},{"json":{"Screen Name":"Jordan C","Overall Rank":"79","Avg/Day":"178"},"pairedItem":{"item":79}},{"json":{"Screen Name":"Jorge T","Overall Rank":"80","Avg/Day":"179"},"pairedItem":{"item":80}},{"json":{"Screen Name":"Josh C","Overall Rank":"81","Avg/Day":"180"},"pairedItem":{"item":81}},{"json":{"Screen Name":"Julie C","Overall Rank":"82","Avg/Day":"181"},"pairedItem":{"item":82}},{"json":{"Screen Name":"Justin D","Overall Rank":"83","Avg/Day":"182"},"pairedItem":{"item":83}},{"json":{"Screen Name":"Karen W","Overall Rank":"84","Avg/Day":"183"},"pairedItem":{"item":84}},{"json":{"Screen Name":"Kasi O","Overall Rank":"85","Avg/Day":"184"},"pairedItem":{"item":85}},{"json":{"Screen Name":"Kat G","Overall Rank":"86","Avg/Day":"185"},"pairedItem":{"item":86}},{"json":{"Screen Name":"Kevin J","Overall Rank":"87","Avg/Day":"186"},"pairedItem":{"item":87}},{"json":{"Screen Name":"Kevin N","Overall Rank":"88","Avg/Day":"187"},"pairedItem":{"item":88}},{"json":{"Screen Name":"Kristen H","Overall Rank":"89","Avg/Day":"188"},"pairedItem":{"item":89}},{"json":{"Screen Name":"Kurt D","Overall Rank":"90","Avg/Day":"189"},"pairedItem":{"item":90}},{"json":{"Screen Name":"Kylee S","Overall Rank":"91","Avg/Day":"190"},"pairedItem":{"item":91}},{"json":{"Screen Name":"Latasha B","Overall Rank":"92","Avg/Day":"191"},"pairedItem":{"item":92}},{"json":{"Screen Name":"Laura K","Overall Rank":"93","Avg/Day":"192"},"pairedItem":{"item":93}},{"json":{"Screen Name":"Leslie D","Overall Rank":"94","Avg/Day":"193"},"pairedItem":{"item":94}},{"json":{"Screen Name":"Leslie F","Overall Rank":"95","Avg/Day":"194"},"pairedItem":{"item":95}},{"json":{"Screen Name":"Levi W","Overall Rank":"96","Avg/Day":"195"},"pairedItem":{"item":96}},{"json":{"Screen Name":"Logann M","Overall Rank":"97","Avg/Day":"196"},"pairedItem":{"item":97}},{"json":{"Screen Name":"Lori M","Overall Rank":"98","Avg/Day":"197"},"pairedItem":{"item":98}},{"json":{"Screen Name":"Lorrie H","Overall Rank":"99","Avg/Day":"198"},"pairedItem":{"item":99}},{"json":{"Screen Name":"Lynn S","Overall Rank":"100","Avg/Day":"199"},"pairedItem":{"item":100}},{"json":{"Screen Name":"Maranda C","Overall Rank":"101","Avg/Day":"200"},"pairedItem":{"item":101}},{"json":{"Screen Name":"Mary J","Overall Rank":"102","Avg/Day":"201"},"pairedItem":{"item":102}},{"json":{"Screen Name":"Matson K","Overall Rank":"103","Avg/Day":"202"},"pairedItem":{"item":103}},{"json":{"Screen Name":"Matthew K","Overall Rank":"104","Avg/Day":"203"},"pairedItem":{"item":104}},{"json":{"Screen Name":"Maureen F","Overall Rank":"105","Avg/Day":"204"},"pairedItem":{"item":105}},{"json":{"Screen Name":"Megan K","Overall Rank":"106","Avg/Day":"205"},"pairedItem":{"item":106}},{"json":{"Screen Name":"Megan S","Overall Rank":"107","Avg/Day":"206"},"pairedItem":{"item":107}},{"json":{"Screen Name":"Megan T","Overall Rank":"108","Avg/Day":"207"},"pairedItem":{"item":108}},{"json":{"Screen Name":"Melissa K","Overall Rank":"109","Avg/Day":"208"},"pairedItem":{"item":109}},{"json":{"Screen Name":"Mimi O","Overall Rank":"110","Avg/Day":"209"},"pairedItem":{"item":110}},{"json":{"Screen Name":"Meriam R","Overall Rank":"111","Avg/Day":"210"},"pairedItem":{"item":111}},{"json":{"Screen Name":"Michael R","Overall Rank":"112","Avg/Day":"211"},"pairedItem":{"item":112}},{"json":{"Screen Name":"Michele B","Overall Rank":"113","Avg/Day":"212"},"pairedItem":{"item":113}},{"json":{"Screen Name":"Michelle C","Overall Rank":"114","Avg/Day":"213"},"pairedItem":{"item":114}},{"json":{"Screen Name":"Michelle H","Overall Rank":"115","Avg/Day":"214"},"pairedItem":{"item":115}},{"json":{"Screen Name":"Michelle R","Overall Rank":"116","Avg/Day":"215"},"pairedItem":{"item":116}},{"json":{"Screen Name":"Michelle S","Overall Rank":"117","Avg/Day":"216"},"pairedItem":{"item":117}},{"json":{"Screen Name":"Mike H","Overall Rank":"118","Avg/Day":"217"},"pairedItem":{"item":118}},{"json":{"Screen Name":"mike k","Overall Rank":"119","Avg/Day":"218"},"pairedItem":{"item":119}},{"json":{"Screen Name":"Mike S","Overall Rank":"120","Avg/Day":"219"},"pairedItem":{"item":120}},{"json":{"Screen Name":"Myles B","Overall Rank":"121","Avg/Day":"220"},"pairedItem":{"item":121}},{"json":{"Screen Name":"Nancy W","Overall Rank":"122","Avg/Day":"221"},"pairedItem":{"item":122}},{"json":{"Screen Name":"Natalie S","Overall Rank":"123","Avg/Day":"222"},"pairedItem":{"item":123}},{"json":{"Screen Name":"Nicole W","Overall Rank":"124","Avg/Day":"223"},"pairedItem":{"item":124}},{"json":{"Screen Name":"Nina H","Overall Rank":"125","Avg/Day":"224"},"pairedItem":{"item":125}},{"json":{"Screen Name":"Pat D","Overall Rank":"126","Avg/Day":"225"},"pairedItem":{"item":126}},{"json":{"Screen Name":"PaulJK","Overall Rank":"127","Avg/Day":"226"},"pairedItem":{"item":127}},{"json":{"Screen Name":"Paul K","Overall Rank":"128","Avg/Day":"227"},"pairedItem":{"item":128}},{"json":{"Screen Name":"Peggy P","Overall Rank":"129","Avg/Day":"228"},"pairedItem":{"item":129}},{"json":{"Screen Name":"Rachel R","Overall Rank":"130","Avg/Day":"229"},"pairedItem":{"item":130}},{"json":{"Screen Name":"Ralph T","Overall Rank":"131","Avg/Day":"230"},"pairedItem":{"item":131}},{"json":{"Screen Name":"Renee R","Overall Rank":"132","Avg/Day":"231"},"pairedItem":{"item":132}},{"json":{"Screen Name":"Ron S","Overall Rank":"133","Avg/Day":"232"},"pairedItem":{"item":133}},{"json":{"Screen Name":"Rose M","Overall Rank":"134","Avg/Day":"233"},"pairedItem":{"item":134}},{"json":{"Screen Name":"Rrachelle B","Overall Rank":"135","Avg/Day":"234"},"pairedItem":{"item":135}},{"json":{"Screen Name":"Ryan P","Overall Rank":"136","Avg/Day":"235"},"pairedItem":{"item":136}},{"json":{"Screen Name":"Ryan T","Overall Rank":"137","Avg/Day":"236"},"pairedItem":{"item":137}},{"json":{"Screen Name":"Sabrina P","Overall Rank":"138","Avg/Day":"237"},"pairedItem":{"item":138}},{"json":{"Screen Name":"Samantha B","Overall Rank":"139","Avg/Day":"238"},"pairedItem":{"item":139}},{"json":{"Screen Name":"Samuel A","Overall Rank":"140","Avg/Day":"239"},"pairedItem":{"item":140}},{"json":{"Screen Name":"Sara E","Overall Rank":"141","Avg/Day":"240"},"pairedItem":{"item":141}},{"json":{"Screen Name":"Sara K","Overall Rank":"142","Avg/Day":"241"},"pairedItem":{"item":142}},{"json":{"Screen Name":"Scott J","Overall Rank":"143","Avg/Day":"242"},"pairedItem":{"item":143}},{"json":{"Screen Name":"Scott M","Overall Rank":"144","Avg/Day":"243"},"pairedItem":{"item":144}},{"json":{"Screen Name":"Scott R","Overall Rank":"145","Avg/Day":"244"},"pairedItem":{"item":145}},{"json":{"Screen Name":"Shannon B","Overall Rank":"146","Avg/Day":"245"},"pairedItem":{"item":146}},{"json":{"Screen Name":"Sheri A","Overall Rank":"147","Avg/Day":"246"},"pairedItem":{"item":147}},{"json":{"Screen Name":"Skyler P","Overall Rank":"148","Avg/Day":"247"},"pairedItem":{"item":148}},{"json":{"Screen Name":"Stefan C","Overall Rank":"149","Avg/Day":"248"},"pairedItem":{"item":149}},{"json":{"Screen Name":"Steve E","Overall Rank":"150","Avg/Day":"249"},"pairedItem":{"item":150}},{"json":{"Screen Name":"Steve W","Overall Rank":"151","Avg/Day":"250"},"pairedItem":{"item":151}},{"json":{"Screen Name":"Sydney W","Overall Rank":"152","Avg/Day":"251"},"pairedItem":{"item":152}},{"json":{"Screen Name":"Tabitha D","Overall Rank":"153","Avg/Day":"252"},"pairedItem":{"item":153}},{"json":{"Screen Name":"Tami H","Overall Rank":"154","Avg/Day":"253"},"pairedItem":{"item":154}},{"json":{"Screen Name":"Taylor M","Overall Rank":"155","Avg/Day":"254"},"pairedItem":{"item":155}},{"json":{"Screen Name":"Taylor N","Overall Rank":"156","Avg/Day":"255"},"pairedItem":{"item":156}},{"json":{"Screen Name":"Therese V","Overall Rank":"157","Avg/Day":"256"},"pairedItem":{"item":157}},{"json":{"Screen Name":"Tim B","Overall Rank":"158","Avg/Day":"257"},"pairedItem":{"item":158}},{"json":{"Screen Name":"Tim C","Overall Rank":"159","Avg/Day":"258"},"pairedItem":{"item":159}},{"json":{"Screen Name":"Tony M","Overall Rank":"160","Avg/Day":"259"},"pairedItem":{"item":160}},{"json":{"Screen Name":"Tracy F","Overall Rank":"161","Avg/Day":"260"},"pairedItem":{"item":161}},{"json":{"Screen Name":"Tracy T","Overall Rank":"162","Avg/Day":"261"},"pairedItem":{"item":162}},{"json":{"Screen Name":"Zoe H","Overall Rank":"163","Avg/Day":"262"},"pairedItem":{"item":163}}];
 
-    // Split into two columns
-    const halfway = Math.ceil(items.length / 2);
-    const left = items.slice(0, halfway);
-    const right = items.slice(halfway);
+    // For columns: 16–mid, (mid+1)–end
+    const left = all.slice(15, Math.ceil(all.length/2));
+    const right = all.slice(Math.ceil(all.length/2), all.length);
 
-    // Function to generate rows
     function genRows(arr) {
-      // Duplicate for seamless scroll
       let html = '';
       for(let x=0; x<2; x++) {
         for(let i=0; i<arr.length; i++) {
-          const r = arr[i].json;
+          const r = arr[i]?.json || arr[i];
           html += `<tr>
             <td>${r["Overall Rank"] || ''}</td>
             <td>${r["Screen Name"] || ''}</td>
@@ -198,18 +287,16 @@
     document.getElementById('tbodyLeft').innerHTML = genRows(left);
     document.getElementById('tbodyRight').innerHTML = genRows(right);
 
-    // Sync scrolling between both columns
-    const leftTable = document.getElementById('scrollTableLeft');
-    const rightTable = document.getElementById('scrollTableRight');
-    leftTable.addEventListener('animationiteration', () => {
-      rightTable.style.animation = 'none';
-      void rightTable.offsetWidth; // force reflow
-      rightTable.style.animation = '';
+    // Sync scrolls (optional, both reset at same time)
+    document.getElementById('scrollLeft').addEventListener('animationiteration', () => {
+      document.getElementById('scrollRight').style.animation = 'none';
+      void document.getElementById('scrollRight').offsetWidth;
+      document.getElementById('scrollRight').style.animation = '';
     });
-    rightTable.addEventListener('animationiteration', () => {
-      leftTable.style.animation = 'none';
-      void leftTable.offsetWidth; // force reflow
-      leftTable.style.animation = '';
+    document.getElementById('scrollRight').addEventListener('animationiteration', () => {
+      document.getElementById('scrollLeft').style.animation = 'none';
+      void document.getElementById('scrollLeft').offsetWidth;
+      document.getElementById('scrollLeft').style.animation = '';
     });
   </script>
 </body>
