@@ -14,28 +14,20 @@
     }
 
     .header-bar {
-      background: #0f2027;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100px;
-      padding: 0 40px;
+      padding: 20px 40px;
+      text-align: center;
+      font-size: 2.4em;
+      font-weight: bold;
+      position: relative;
     }
 
     .executed {
       position: absolute;
       right: 40px;
-      top: 35px;
+      top: 50%;
+      transform: translateY(-50%);
       font-size: 1em;
       color: #ccc;
-    }
-
-    h1 {
-      font-size: 2.4em;
-      margin: 0;
     }
 
     .tables {
@@ -61,13 +53,6 @@
       font-size: 1.1em;
     }
 
-    thead {
-      background: rgba(0, 0, 0, 0.6);
-      position: sticky;
-      top: 0;
-      z-index: 5;
-    }
-
     th, td {
       padding: 12px 16px;
       text-align: left;
@@ -75,13 +60,16 @@
     }
 
     th {
-      font-weight: bold;
+      background: rgba(0,0,0,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 1;
       color: #fff;
     }
 
     tbody {
       display: block;
-      height: 100%;
+      height: calc(75vh - 42px);
       overflow: hidden;
       animation: scroll 45s linear infinite;
     }
@@ -100,7 +88,7 @@
 </head>
 <body>
   <div class="header-bar">
-    <h1>🌞 Walking on Sunshine Turn up the Heat!</h1>
+    🌞 Walking on Sunshine Turn up the Heat!
     <div class="executed">Executed on: 5/28/2025 11:36 AM</div>
   </div>
 
@@ -1084,12 +1072,6 @@
         <tbody>
           
             <tr>
-              <td>80</td>
-              <td>Jorge T</td>
-              <td>179</td>
-            </tr>
-          
-            <tr>
               <td>81</td>
               <td>Josh C</td>
               <td>180</td>
@@ -1585,12 +1567,6 @@
               <td>163</td>
               <td>Zoe H</td>
               <td>262</td>
-            </tr>
-          
-            <tr>
-              <td>80</td>
-              <td>Jorge T</td>
-              <td>179</td>
             </tr>
           
             <tr>
