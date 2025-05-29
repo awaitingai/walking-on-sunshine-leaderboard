@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,86 +11,95 @@
       padding: 0;
       overflow-x: hidden;
     }
-
     .header-bar {
-      padding: 20px 40px;
+      padding: 30px 40px 10px 40px;
       text-align: center;
       font-size: 2.4em;
       font-weight: bold;
       position: relative;
+      z-index: 2;
+      background: linear-gradient(to right, #0f2027 80%, #2c5364 100%);
     }
-
     .executed {
       position: absolute;
       right: 40px;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 45px;
       font-size: 1em;
       color: #ccc;
+      font-weight: normal;
+      z-index: 2;
     }
-
     .tables {
       display: flex;
       justify-content: center;
       gap: 40px;
-      padding: 20px;
+      padding: 0 20px 20px 20px;
     }
-
     .table-container {
       background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
+      border-radius: 16px;
       width: 45%;
-      height: 75vh;
+      height: 80vh;
       overflow: hidden;
       position: relative;
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
     }
-
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 1.1em;
+      font-size: 1.15em;
     }
-
-    th, td {
-      padding: 12px 16px;
-      text-align: left;
-      white-space: nowrap;
-    }
-
-    th {
-      background: rgba(0,0,0,0.6);
+    thead {
+      background: rgba(20,30,40,0.95);
       position: sticky;
       top: 0;
-      z-index: 1;
-      color: #fff;
+      z-index: 3;
     }
-
+    th, td {
+      padding: 14px 18px;
+      text-align: left;
+      white-space: nowrap;
+      background: none;
+    }
+    th {
+      color: #fff;
+      font-size: 1.07em;
+      font-weight: 700;
+      border-bottom: 2px solid #1b2836;
+      background: rgba(20,30,40,0.97);
+    }
     tbody {
       display: block;
-      height: calc(75vh - 42px);
+      height: calc(80vh - 48px);
       overflow: hidden;
-      animation: scroll 45s linear infinite;
+      animation: scroll 50s linear infinite;
     }
-
     tbody tr {
       display: table;
       width: 100%;
       table-layout: fixed;
+      background: none;
     }
-
+    tbody tr:nth-child(even) td {
+      background: rgba(255,255,255,0.04);
+    }
+    tbody tr td {
+      background: none;
+    }
+    /* Animate and loop */
     @keyframes scroll {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-50%); }
+      0% { transform: translateY(0);}
+      100% { transform: translateY(-50%);}
     }
   </style>
 </head>
 <body>
   <div class="header-bar">
     🌞 Walking on Sunshine Turn up the Heat!
-    <div class="executed">Executed on: 5/28/2025 11:36 AM</div>
+    <div class="executed">5/28/2025 11:36 AM</div>
   </div>
-
   <div class="tables">
     <div class="table-container">
       <table>
@@ -101,8 +109,8 @@
         <tbody>
           
             <tr>
-              <td>undefined</td>
-              <td>undefined</td>
+              <td></td>
+              <td></td>
               <td>0</td>
             </tr>
           
@@ -581,8 +589,8 @@
             </tr>
           
             <tr>
-              <td>undefined</td>
-              <td>undefined</td>
+              <td></td>
+              <td></td>
               <td>0</td>
             </tr>
           
@@ -1063,13 +1071,18 @@
         </tbody>
       </table>
     </div>
-
     <div class="table-container">
       <table>
         <thead>
           <tr><th>Rank</th><th>Name</th><th>Steps</th></tr>
         </thead>
         <tbody>
+          
+            <tr>
+              <td>80</td>
+              <td>Jorge T</td>
+              <td>179</td>
+            </tr>
           
             <tr>
               <td>81</td>
@@ -1567,6 +1580,12 @@
               <td>163</td>
               <td>Zoe H</td>
               <td>262</td>
+            </tr>
+          
+            <tr>
+              <td>80</td>
+              <td>Jorge T</td>
+              <td>179</td>
             </tr>
           
             <tr>
