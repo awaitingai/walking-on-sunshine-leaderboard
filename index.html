@@ -19,6 +19,7 @@
         align-items: center;
         position: relative;
         text-align: center;
+        margin-bottom: 20px;
       }
 
       .executed {
@@ -40,7 +41,6 @@
         justify-content: center;
         gap: 40px;
         flex-wrap: wrap;
-        margin-top: 40px;
       }
 
       .table-container {
@@ -59,25 +59,27 @@
         font-size: 1.1em;
       }
 
+      thead {
+        background: rgba(0, 0, 0, 0.4);
+        position: sticky;
+        top: 0;
+        z-index: 5;
+      }
+
       th, td {
         padding: 12px;
         text-align: left;
       }
 
-      thead {
-        background: rgba(0, 0, 0, 0.4);
-        position: sticky;
-        top: 0;
-        z-index: 10;
-      }
-
       th {
-        color: #fff;
         font-weight: bold;
+        color: #fff;
       }
 
       tbody {
         display: block;
+        height: 100%;
+        overflow: hidden;
         animation: scroll 45s linear infinite;
       }
 
@@ -96,7 +98,7 @@
   <body>
     <div class="header">
       <h1>🌞 Walking on Sunshine Turn up the Heat!</h1>
-      <div class="executed">Executed on: Executed on: 5/28/2025 11:36 AM</div>
+      <div class=>Executed on: 5/28/2025 11:36 AM</div>
     </div>
 
     <div class="tables">
