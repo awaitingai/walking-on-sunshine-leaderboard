@@ -15,18 +15,19 @@
       text-align: center;
       font-size: 2.7em;
       font-weight: bold;
-      padding-top: 30px;
-      margin-bottom: 18px;
+      padding-top: 36px;
+      margin-bottom: 38px;
     }
     .last-updated {
       position: absolute;
       right: 40px;
-      top: 24px;
+      top: 34px;
       font-size: 1.08em;
       color: #ccc;
       background: #1b2a38;
       border-radius: 10px;
       padding: 3px 16px;
+      z-index: 10;
     }
     .tables {
       display: flex;
@@ -43,7 +44,7 @@
       width: 340px;
       min-width: 310px;
       max-width: 350px;
-      height: 74vh;
+      height: 76vh;
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -74,7 +75,7 @@
     }
     /* Scrollbox styles */
     .scrollbox {
-      height: calc(74vh - 45px);
+      height: calc(76vh - 45px);
       overflow: hidden;
       position: relative;
       width: 100%;
@@ -104,12 +105,16 @@
   <div class="tables">
     <!-- LEFT SCROLLER -->
     <div class="table-container">
-      <table>
-        <thead><tr><th>Rank</th><th>Name</th><th>Steps</th></tr></thead>
-      </table>
       <div class="scrollbox">
         <table>
+          <thead><tr><th>Rank</th><th>Name</th><th>Steps</th></tr></thead>
           <tbody>
+            
+              <tr>
+                <td>15</td>
+                <td>Ben S</td>
+                <td>114</td>
+              </tr>
             
               <tr>
                 <td>16</td>
@@ -997,6 +1002,12 @@
                 <td>163</td>
                 <td>Zoe H</td>
                 <td>262</td>
+              </tr>
+            
+              <tr>
+                <td>15</td>
+                <td>Ben S</td>
+                <td>114</td>
               </tr>
             
               <tr>
@@ -1898,6 +1909,12 @@
         <tbody>
           
             <tr>
+              <td>undefined</td>
+              <td>undefined</td>
+              <td>0</td>
+            </tr>
+          
+            <tr>
               <td>1</td>
               <td>Aaron G</td>
               <td>100</td>
@@ -1986,11 +2003,9 @@
     </div>
     <!-- RIGHT SCROLLER -->
     <div class="table-container">
-      <table>
-        <thead><tr><th>Rank</th><th>Name</th><th>Steps</th></tr></thead>
-      </table>
       <div class="scrollbox">
         <table>
+          <thead><tr><th>Rank</th><th>Name</th><th>Steps</th></tr></thead>
           <tbody>
             
               <tr>
