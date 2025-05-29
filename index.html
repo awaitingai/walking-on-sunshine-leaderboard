@@ -7,16 +7,15 @@
     body {
       margin: 0;
       background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
       padding: 0;
       overflow-x: hidden;
     }
-
     .header-bar {
       width: 100vw;
-      background: rgba(15, 32, 39, 0.96);
-      padding: 24px 0 12px 0;
+      background: rgba(15, 32, 39, 0.98);
+      padding: 28px 0 12px 0;
       text-align: center;
       font-size: 2.4em;
       font-weight: bold;
@@ -26,108 +25,92 @@
       z-index: 10;
       box-shadow: 0 2px 12px #0004;
     }
-
     .last-updated {
       position: absolute;
-      right: 40px;
-      top: 34px;
-      font-size: 1em;
+      right: 60px;
+      top: 36px;
+      font-size: 1.05em;
       color: #d7dadb;
       font-weight: normal;
       letter-spacing: 1px;
+      z-index: 11;
+      background: rgba(15, 32, 39, 0.98);
+      padding: 0 10px;
+      border-radius: 5px;
     }
-
     .main-content {
-      padding-top: 95px; /* so tables start below header */
+      padding-top: 100px; /* so tables start below header */
       width: 100vw;
     }
-
     .tables {
       display: flex;
       justify-content: center;
-      gap: 40px;
-      padding: 20px;
+      gap: 48px;
+      padding: 20px 0 0 0;
       align-items: flex-start;
     }
-
     .table-container {
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(255, 255, 255, 0.09);
       border-radius: 16px;
       width: 38vw;
       min-width: 340px;
       max-width: 650px;
-      height: 74vh;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      height: 75vh;
+      box-shadow: 0 0 24px rgba(0,0,0,0.18);
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
-
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 1.18em;
+      font-size: 1.14em;
       background: none;
     }
-
-    thead {
+    thead tr {
       background: rgba(15, 32, 39, 0.98);
-      position: sticky;
-      top: 0;
-      z-index: 3;
+      color: #fff;
     }
-
     th, td {
-      padding: 12px 16px;
+      padding: 13px 18px;
       text-align: left;
       white-space: nowrap;
     }
-
     th {
-      color: #fff;
-      font-size: 1.12em;
-      letter-spacing: 1px;
+      font-size: 1.15em;
       font-weight: bold;
-      border-bottom: 2px solid #fff2;
+      border-bottom: 2px solid #fff3;
       background: rgba(15, 32, 39, 0.98);
+      position: sticky;
+      top: 0;
+      z-index: 2;
     }
-
     .scrollbody {
-      display: block;
       overflow-y: auto;
-      height: 67vh;
+      flex: 1 1 auto;
+      height: 100%;
       background: transparent;
       scrollbar-width: thin;
     }
-
     .scrollbody::-webkit-scrollbar {
       width: 10px;
-      background: #1a2a33;
+      background: #223;
       border-radius: 6px;
     }
-
     .scrollbody::-webkit-scrollbar-thumb {
-      background: #3a4d5c;
+      background: #2c4a5a;
       border-radius: 6px;
     }
-
     tbody tr {
-      display: table;
-      width: 100%;
-      table-layout: fixed;
-      background: rgba(255,255,255,0.02);
+      background: rgba(255,255,255,0.01);
       transition: background 0.2s;
     }
-
     tbody tr:nth-child(even) {
       background: rgba(255,255,255,0.07);
     }
-
     tbody tr:hover {
-      background: rgba(255,255,255,0.13);
+      background: rgba(255,255,255,0.17);
     }
-
   </style>
 </head>
 <body>
@@ -631,7 +614,6 @@
           </table>
         </div>
       </div>
-
       <div class="table-container">
         <table>
           <thead>
